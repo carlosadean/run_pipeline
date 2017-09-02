@@ -1,0 +1,21 @@
+# Tasks should be execute from this branch
+branch: master
+
+#Things a wanna execute
+tasks:
+  - build:
+      cmd: mvn clean install
+  - compress:
+      cmd: zip -r scripting.zip target/
+  - integration:
+      cmd: mvn verify
+
+
+# Ordenaded way to run my steps
+pipelines:
+  - build:
+     - build pipeline do fabio
+  - release:
+      - build
+      - integration
+      - compress
