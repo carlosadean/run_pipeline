@@ -77,7 +77,7 @@ if __name__ == '__main__':
 	pipeline = Pipeline()
 
 	parser = argparse.ArgumentParser(description="Build a generic product")
-	parser.add_argument('-b','--build', type=str, metavar='', help="clone and run a pipeline")
+	parser.add_argument('-b','--build', type=str, metavar='', required=True, help="inform the url of a git repository")
 	args = parser.parse_args()
 
 	# executando a funcao run_build com o endereco informado no argumento
